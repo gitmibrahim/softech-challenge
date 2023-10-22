@@ -29,7 +29,8 @@ export const UserMock = {
 export const CartServiceMock = {
   addProductToCart: jasmine.createSpy('addProductToCart').and.returnValue({ status: 'success' }),
   removeProductFromCart: jasmine.createSpy('removeProductFromCart').and.returnValue({ status: 'success' }),
-  editProductQuantity: jasmine.createSpy('editProductQuantity').and.returnValue({ status: 'success' })
+  editProductQuantity: jasmine.createSpy('editProductQuantity').and.returnValue({ status: 'success' }),
+  getCart: jasmine.createSpy('getCart').and.returnValue({ status: 'success' })
 }
 
 export const OrdersServiceMock = {
