@@ -50,7 +50,7 @@ describe('ProductCardComponent', () => {
   });
 
   it('should edit product quantity', async () => {
-    spyOn(component, 'editProductQuantity')
+    spyOn(component, 'editProductQuantityInCart')
     expect(component.quantity).toEqual(0)
 
     const addToCartBtn = fixture.nativeElement.query(By.css('button.add-to-cart'))
@@ -62,7 +62,7 @@ describe('ProductCardComponent', () => {
     plusBtn.click(ProductMock)
     await fixture.whenStable()
 
-    expect(component.editProductQuantity).toHaveBeenCalledOnceWith('add');
-    expect(CartServiceMock.editProductQuantity).toHaveBeenCalledOnceWith('add')
+    expect(component.editProductQuantityInCart).toHaveBeenCalledOnceWith('add');
+    expect(CartServiceMock.editProductQuantityInCart).toHaveBeenCalledOnceWith('add')
   });
 });
