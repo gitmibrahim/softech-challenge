@@ -45,7 +45,7 @@ describe('ProductCardComponent', () => {
 
     await fixture.whenStable()
     
-    expect(component.addProductToCart).toHaveBeenCalledOnceWith(ProductMock);
+    expect(component.addProductToCart).toHaveBeenCalledOnceWith();
     expect(CartServiceMock.addProductToCart).toHaveBeenCalledOnceWith(ProductMock)
   });
 
@@ -62,7 +62,7 @@ describe('ProductCardComponent', () => {
     plusBtn.click(ProductMock)
     await fixture.whenStable()
 
-    expect(component.editProductQuantity).toHaveBeenCalledOnceWith(ProductMock, 'add');
-    expect(CartServiceMock.editProductQuantity).toHaveBeenCalledOnceWith(ProductMock, 'add')
+    expect(component.editProductQuantity).toHaveBeenCalledOnceWith('add');
+    expect(CartServiceMock.editProductQuantity).toHaveBeenCalledOnceWith('add')
   });
 });
