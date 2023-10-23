@@ -2,4 +2,10 @@
   <img class="product-img" width="150" height="150" [src]="product.ProductImg" [alt]="product.ProductName">
   <h3>{{ product.ProductName }}</h3>
   <p>${{ product.ProductPrice }}</p>
+  <button class="add-to-cart">Add to cart</button>
+  @if (quantity > 0) {
+    <button class="minus" (click)="editProductQuantity('subtract')">-</button>
+    <input type="number" [(ngModel)]="quantity" (change)="editProductQuantity()">
+    <button class="plus" (click)="editProductQuantity('add')">+</button>
+  }
 </div>

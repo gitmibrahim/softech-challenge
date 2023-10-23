@@ -13,7 +13,7 @@ export class ProductCardComponent {
   @Input() product!: Product
   quantity: number = 0
 
-  addProductToCart(product: Product) {}
+  addProductToCart() {}
 
-  editProductQuantity(product: Product, operation: 'add' | 'subtract') {}
+  editProductQuantity(operation: 'add' | 'subtract') {}
 }
