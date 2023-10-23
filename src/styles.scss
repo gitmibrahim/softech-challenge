@@ -9,6 +9,16 @@ body {
   color: #1c1e21;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -17,4 +27,10 @@ body {
   padding: 10px;
   box-shadow: 0 1px 6px 0 rgba(32,33,36,.28);
   border-radius: 12px;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
