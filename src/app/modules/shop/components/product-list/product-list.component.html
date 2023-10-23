@@ -1,1 +1,7 @@
-<p>product-list works!</p>
+<div class="product-list">
+  @for (product of productList; track product.ProductId) {
+    <app-product-card [product]="product"></app-product-card>
+  } @empty {
+    <p>No products added yet!</p>
+  }
+</div>
