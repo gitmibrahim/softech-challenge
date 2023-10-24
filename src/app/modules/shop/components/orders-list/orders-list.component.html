@@ -1,1 +1,8 @@
-<p>orders-list works!</p>
+<div class="product-list">
+  @for (order of orderList; track order['OrderId']) {
+    <app-order-card [order]="order"></app-order-card>
+  } @empty {
+    <p>No orders added yet!</p>
+  }
+</div>
+<!-- <router-outlet></router-outlet> -->

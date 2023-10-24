@@ -1,1 +1,11 @@
-<p>order works!</p>
+<div class="card order">
+  <p>
+    Order ID: {{ order.OrderId }}
+  </p>
+  <p>Products: </p>
+  @for (product of order['Products']; track product['ProductId']) {
+    <app-product-card [product]="product" [previewOnly]="true"></app-product-card>
+  } @empty {
+    <p>No products added yet!</p>
+  }
+</div>

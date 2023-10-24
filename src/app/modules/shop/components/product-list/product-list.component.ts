@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../interfaces/product';
-import products from '../../../../../order-master-dp/porducts.json';
+import products from '../../../../../order-master-dp/products.json';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { CartService } from '../../services/cart.service';
 

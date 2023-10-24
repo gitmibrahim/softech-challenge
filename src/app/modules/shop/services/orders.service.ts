@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { OrderDetails } from '../interfaces/order-details';
+import orders from '../../../../order-master-dp/orders.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
-
+  
   constructor() { }
 
-  addOrder(order: OrderDetails) {
+  addOrder(order: any) {
     const orders = localStorage.getItem('orders');
     if (orders) {
       const parsedOrders = JSON.parse(orders);
@@ -17,5 +17,9 @@ export class OrdersService {
     } else {
       localStorage.setItem('orders', JSON.stringify([order]));
     }
+  }
+
+  getOrder(id: any) {
+    return orders.find(o => o.OrderId === id)
   }
 }
