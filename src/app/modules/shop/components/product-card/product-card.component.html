@@ -1,23 +1,28 @@
 <div class="card product">
-  <div class="product-availability">
-    @if (product.quantity! === product.AvailablePieces! || product.AvailablePieces === 0) {
-      <span>sold out</span>
-    } @else if (product.AvailablePieces! - quantity! < 10) {
-      <span>limited</span>
-    }
+  <div class="product-img-container">
+    <div class="product-availability">
+      @if (product.quantity! === product.AvailablePieces! || product.AvailablePieces === 0) {
+        <span>sold out</span>
+      } @else if (product.AvailablePieces! - quantity! < 10) {
+        <span>limited</span>
+      }
+    </div>
+    <img class="product-img" width="150" height="150" [src]="product.ProductImg" [alt]="product.ProductName">
   </div>
-  <img class="product-img" width="150" height="150" [src]="product.ProductImg" [alt]="product.ProductName">
-  <h3 class="product-name">{{ product.ProductName }}</h3>
-  <p class="product-price">${{ product.ProductPrice }}</p>
-  <div class="cart-btns">
-    @if (quantity == 0) {
-      <button class="add-to-cart" [disabled]="product.quantity" (click)="addProductToCart()">Add to cart</button>
-    } @else {
-      <div class="quantity-controls">
-        <button class="minus" (click)="editProductQuantityInCart('subtract')">-</button>
-        <input type="number" [(ngModel)]="quantity" (change)="editProductQuantityInCart('change')">
-        <button class="plus" (click)="editProductQuantityInCart('add')" [disabled]="product.quantity === product.AvailablePieces">+</button>
-      </div>
-    }
+
+  <div class="product-info-container">
+    <h3 class="product-name">{{ product.ProductName }}</h3>
+    <p class="product-price">${{ product.ProductPrice }}</p>
+    <div class="cart-btns">
+      @if (quantity == 0) {
+        <button class="add-to-cart" [disabled]="product.quantity" (click)="addProductToCart()">Add to cart</button>
+      } @else {
+        <div class="quantity-controls">
+          <button class="minus" (click)="editProductQuantityInCart('subtract')">-</button>
+          <input type="number" [(ngModel)]="quantity" (change)="editProductQuantityInCart('change')">
+          <button class="plus" (click)="editProductQuantityInCart('add')" [disabled]="product.quantity === product.AvailablePieces">+</button>
+        </div>
+      }
+    </div>
   </div>
 </div>

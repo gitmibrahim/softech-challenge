@@ -20,7 +20,7 @@ export class ProductListComponent {
   
   constructor(private cartService: CartService) {
     this.productList.map((product: Product) => {
-      const productInCart = this.cartService.cart.products.find((p: Product) => 
+      const productInCart = this.cartService.cart?.products.find((p: Product) => 
         p.ProductId === product.ProductId
       )
       if (productInCart) product.quantity = productInCart.quantity

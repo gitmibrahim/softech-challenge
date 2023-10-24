@@ -4,6 +4,8 @@
   </a>
   <a class="cart-icon" routerLink="checkout">
     <img src="assets/cart.png" alt="your cart" width="40" height="40">
-    <span class="count">{{ cart.products.length }}</span>
+    @if (cart && cart.products.length) {
+      <span class="count">{{ cart.products.length }}</span>
+    }
   </a>
 </header>

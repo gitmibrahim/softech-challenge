@@ -1,2 +1,4 @@
-export interface OrderDetails {
+import { OrderPreview } from "./order-preview";
+
+export interface OrderDetails extends OrderPreview {
 }

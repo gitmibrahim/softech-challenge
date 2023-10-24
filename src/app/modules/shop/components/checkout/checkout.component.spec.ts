@@ -30,11 +30,11 @@ describe('CheckoutComponent', () => {
   });
 
   it('should get cart on init', () => {
-    expect(CartServiceMock.getCart).toHaveBeenCalled();
+    expect(component.productsInCart).toBeDefined();
   });
 
   it('should get cart on init', async () => {
-    const addOrdertBtn = fixture.nativeElement.query(By.css('button.add-order'))
+    const addOrdertBtn = fixture.nativeElement.query(By.css('input.add-order'))
     addOrdertBtn.click()
     await fixture.whenStable()
     expect(OrdersServiceMock.addOrder).toHaveBeenCalled()

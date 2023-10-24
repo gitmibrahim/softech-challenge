@@ -13,6 +13,12 @@
     }
   }
 
+  .product-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .product-name,
   .product-price{
     margin-block: 0;

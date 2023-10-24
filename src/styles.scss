@@ -41,6 +41,15 @@ input[type=number] {
   -moz-appearance: textfield; /* Firefox */
 }
 
+.product-list {
+  display: flex;
+  place-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1400px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -55,4 +64,8 @@ button {
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+
+input, fieldset {
+  border-radius: 12px;
 }
