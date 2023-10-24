@@ -5,18 +5,40 @@
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: #F0F2F5;
   color: #1c1e21;
 }
 
+app-root {
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  min-height:50px;
+}
+#content {
+  flex: 1;
+}
+
+header,
+#content,
+footer {
+  padding: 10px 50px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type=number] {
-    -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield; /* Firefox */
 }
 
 .card {
