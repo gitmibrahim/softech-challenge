@@ -15,12 +15,14 @@ export class CartService {
     if (this._cart) return this._cart;
 
     const cart = JSON.parse(localStorage.getItem('cart') || '{}');
-    this._cart = cart.products ? cart : null
-    return cart.products ? cart : null
+    this._cart = cart && cart.products ? cart : null
+    return cart && cart.products ? cart : null
   }
 
   set cart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
+    this._cart = cart;
+    this.cart$.next(cart)
   }
 
   addProduct(product: Product) {

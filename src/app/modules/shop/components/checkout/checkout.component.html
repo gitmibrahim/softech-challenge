@@ -1,1 +1,40 @@
-<p>checkout works!</p>
+<div class="card cart">
+  @if (productsInCart) {
+    <div class="products-preview">
+      <p>Products:</p>
+      <div class="product-list">
+        @for (product of productsInCart; track product.ProductId) {
+          <app-product-card [product]="product"></app-product-card>
+        } @empty {
+          <p>No products here. <a routerLink="/">Go back to shop!</a></p>
+        }
+      </div>
+    </div>
+    <div class="checkout-info">
+      <p>Checkout:</p>
+      <form [formGroup]="checkoutForm" (submit)="addOrder()">
+        <div class="card">
+          <input type="text" name="name" placeholder="Your Name" formControlName="userName">
+          <input type="email" name="email" placeholder="Your Email" formControlName="userEmail">
+          <input type="phone" name="phone" placeholder="Your Phone" formControlName="userPhone">
+          <input type="text" name="address" placeholder="Your Address" formControlName="userAddress">
+          <fieldset>
+            <legend>Payment Type</legend>
+  
+            <label for="online">
+              <input type="radio" name="paymentType" value="cash" formControlName="paymentType" id="cash">
+              Cash
+            </label>
+            <label for="online">
+              <input type="radio" name="paymentType" value="online" formControlName="paymentType" id="online">
+              Online
+            </label>
+          </fieldset>
+          <input type="submit" value="Submit" class="add-order">
+        </div>
+      </form>
+    </div>
+  } @else {
+    <p>No products here. <a routerLink="/">Go back to shop!</a></p>
+  }
+</div>
