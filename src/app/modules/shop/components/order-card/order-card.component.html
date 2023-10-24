@@ -1,0 +1,9 @@
+<div class="card order">
+  <p>
+    Order ID: <a [routerLink]="order['OrderId']">{{ order['OrderId'] }}</a>
+  </p>
+  <p>
+    Payment Method: {{ order['PaymentType'] }}
+  </p>
+  <p>Products: {{ order['Products'].length }}</p>
+</div>

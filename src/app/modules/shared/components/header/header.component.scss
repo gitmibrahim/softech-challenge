@@ -16,6 +16,17 @@ header {
     font-family: cursive;
   }
 
+  .pages {
+    display: flex;
+    gap: 20px;
+    
+    .tab {
+      padding: 10px;
+      background: #dfe2e7;
+      border-radius: 5px;
+    }
+  }
+
   .cart-icon {
     position: relative;
 

@@ -2,10 +2,14 @@
   <a routerLink="/">
     <h1>Softech Shop</h1>
   </a>
-  <a class="cart-icon" routerLink="checkout">
-    <img src="assets/cart.png" alt="your cart" width="40" height="40">
-    @if (cart && cart.products.length) {
-      <span class="count">{{ cart.products.length }}</span>
-    }
-  </a>
+  <div class="pages">
+    <a class="cart-icon" routerLink="orders" class="tab">Orders</a>
+
+    <a class="cart-icon" routerLink="checkout">
+      <img src="assets/cart.png" alt="your cart" width="40" height="40">
+      @if (cart && cart.products.length) {
+        <span class="count">{{ cart.products.length }}</span>
+      }
+    </a>
+  </div>
 </header>

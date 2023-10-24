@@ -13,6 +13,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class ProductCardComponent {
   @Input() product!: Product
+  @Input() previewOnly: boolean = false
   quantity!: number
 
   constructor(private cartService: CartService) {}
